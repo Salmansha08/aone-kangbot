@@ -30,7 +30,7 @@ trackers = f"[{trackers_list}]"
 cmd = f"aria2c \
 --enable-rpc \
 --rpc-listen-all=false \
---rpc-listen-port 6800 \
+--rpc-listen-port 8210 \
 --max-connection-per-server=10 \
 --rpc-max-request-size=1024M \
 --seed-time=0.01 \
@@ -45,7 +45,7 @@ cmd = f"aria2c \
 
 aria2_is_running = subprocess_run(cmd)
 
-aria2 = aria2p.API(aria2p.Client(host="http://localhost", port=6800,
+aria2 = aria2p.API(aria2p.Client(host="http://localhost", port=8210,
                                  secret=""))
 
 

@@ -248,9 +248,12 @@ async def ban(bon):
     # is done gracefully
     # Shout out the ID, so that fedadmins can fban later
     if reason:
-        await bon.edit(f"`{str(user.id)}` was banned !!\nReason: {reason}")
+        await bon.edit(f"{user.first_name} was banned !!\
+        \nID: `{str(user.id)}`\
+        \nReason: {reason}")
     else:
-        await bon.edit(f"`{str(user.id)}` was banned !!")
+        await bon.edit(f"{user.first_name} was banned !!\
+        \nID: `{str(user.id)}`")
     # Announce to the logging group if we have banned the person
     # successfully!
     if BOTLOG:
@@ -287,7 +290,6 @@ async def nothanos(unbon):
         await unbon.client(
             EditBannedRequest(unbon.chat_id, user.id, UNBAN_RIGHTS))
         await unbon.edit("```Unbanned Successfully```")
-
         if BOTLOG:
             await unbon.client.send_message(
                 BOTLOG_CHATID, "#UNBAN\n"
@@ -346,7 +348,6 @@ async def spider(spdr):
                 await spdr.edit(f"`Safely taped !!`\nReason: {reason}")
             else:
                 await spdr.edit("`Safely taped !!`")
-
             # Announce to logging group
             if BOTLOG:
                 await spdr.client.send_message(
@@ -586,7 +587,6 @@ async def rm_deletedacc(show):
     await sleep(2)
     await show.delete()
 
-
     if BOTLOG:
         await show.client.send_message(
             BOTLOG_CHATID, "#CLEANUP\n"
@@ -706,7 +706,7 @@ async def kick(usr):
 
     try:
         await usr.client.kick_participant(usr.chat_id, user.id)
-        await sleep(.5)
+        await sleep(1)
     except Exception as e:
         await usr.edit(NO_PERM + f"\n{str(e)}")
         return

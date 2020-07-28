@@ -13,7 +13,7 @@ from shutil import which
 from os import remove
 from telethon import version
 
-from userbot import bot, CMD_HELP, ALIVE_NAME, AONE_LOGO, BOT_VERSION
+from userbot import bot, CMD_HELP, ALIVE_NAME, CUSTOM_LOGO, BOT_VERSION
 from userbot.events import register
 
 # ================= CONSTANT =================
@@ -22,6 +22,13 @@ if ALIVE_NAME is not None:
     DEFAULTUSER = str(ALIVE_NAME)
 else:
     DEFAULTUSER = "User"
+# ============================================
+
+# ================= CONSTANT =================
+if CUSTOM_LOGO is not None:
+    AONE_LOGOS = str(CUSTOM_LOGO)
+else:
+    AONE_LOGOS = "https://github.com/aone-id/aone-kangbot/raw/sql-extended/aoneid.png"
 # ============================================
 
 
@@ -139,7 +146,7 @@ async def pipcheck(pip):
 @register(outgoing=True, pattern="^.alive$")
 async def amireallyalive(alive):
     """ For .alive command, check if the bot is running.  """
-    logo = AONE_LOGO
+    logo = AONE_LOGOS
     alive_text = ("`"
                      f"••••••••••••••••••••••••••••••• \n"
                      "Aone-Kangbot is running, Enjoy! \n\n"

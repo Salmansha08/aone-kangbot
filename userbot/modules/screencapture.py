@@ -66,4 +66,3 @@ CMD_HELP.update({
     \nUsage: Takes a screenshot of a website and sends the screenshot.\
     \nExample of a valid URL : `https://www.google.com`"
 })
-

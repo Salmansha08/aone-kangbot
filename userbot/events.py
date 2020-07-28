@@ -14,9 +14,8 @@ from time import gmtime, strftime
 from traceback import format_exc
 
 from telethon import events
-from telethon.tl.types import ChannelParticipantsAdmins
 
-from userbot import bot, BOTLOG, BOTLOG_CHATID, LOGSPAMMER
+from userbot import BOTLOG_CHATID, LOGSPAMMER, bot
 
 
 def register(**args):
@@ -27,7 +26,7 @@ def register(**args):
     unsafe_pattern = r'^[^/!#@\$A-Za-z]'
     groups_only = args.get('groups_only', False)
     trigger_on_fwd = args.get('trigger_on_fwd', False)
-    trigger_on_inline = args.get('trigger_on_inline', False)
+    args.get('trigger_on_inline', False)
     disable_errors = args.get('disable_errors', False)
     insecure = args.get('insecure', False)
 
@@ -48,10 +47,10 @@ def register(**args):
 
     if "trigger_on_fwd" in args:
         del args['trigger_on_fwd']
-      
+
     if "trigger_on_inline" in args:
         del args['trigger_on_inline']
-      
+
     if "insecure" in args:
         del args['insecure']
 
@@ -92,7 +91,8 @@ def register(**args):
 
             except events.StopPropagation:
                 raise events.StopPropagation
-            # This is a gay exception and must be passed out. So that it doesnt spam chats
+            # This is a gay exception and must be passed out. So that it doesnt
+            # spam chats
             except KeyboardInterrupt:
                 pass
             except BaseException:

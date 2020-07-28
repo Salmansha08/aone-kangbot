@@ -8,7 +8,7 @@
 
 from asyncio import create_subprocess_exec as asyncrunapp
 from asyncio.subprocess import PIPE as asyncPIPE
-from platform import python_version, uname
+from platform import python_version
 from shutil import which
 from os import remove
 from telethon import version
@@ -148,17 +148,17 @@ async def amireallyalive(alive):
     """ For .alive command, check if the bot is running.  """
     logo = AONE_LOGOS
     alive_text = ("`"
-                     f"••••••••••••••••••••••••••••••• \n"
-                     "Aone-Kangbot is running, Enjoy! \n\n"
-                     f"=============================== \n"
-                     f"Telethon version: {version.__version__} \n"
-                     f"Aone-Kangbot version: {VERSION} \n"
-                     f"Python: {python_version()} \n"
-                     f"=============================== \n\n"
-                     f"User: {DEFAULTUSER} \n"
-                     f"••••••••••••••••••••••••••••••• \n"
-                     " \n\n"
-                     "`")
+                  f"••••••••••••••••••••••••••••••• \n"
+                  "Aone-Kangbot is running, Enjoy! \n\n"
+                  f"=============================== \n"
+                  f"Telethon version: {version.__version__} \n"
+                  f"Aone-Kangbot version: {VERSION} \n"
+                  f"Python: {python_version()} \n"
+                  f"=============================== \n\n"
+                  f"User: {DEFAULTUSER} \n"
+                  f"••••••••••••••••••••••••••••••• \n"
+                  " \n\n"
+                  "`")
     await bot.send_file(alive.chat_id, logo, caption=alive_text)
 
 

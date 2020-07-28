@@ -72,77 +72,77 @@ ZALG_LIST = [[
     " ͚",
     " ",
 ],
-             [
-                 " ̍",
-                 " ̎",
-                 " ̄",
-                 " ̅",
-                 " ̿",
-                 " ̑",
-                 " ̆",
-                 " ̐",
-                 " ͒",
-                 " ͗",
-                 " ͑",
-                 " ̇",
-                 " ̈",
-                 " ̊",
-                 " ͂",
-                 " ̓",
-                 " ̈́",
-                 " ͊",
-                 " ͋",
-                 " ͌",
-                 " ̃",
-                 " ̂",
-                 " ̌",
-                 " ͐",
-                 " ́",
-                 " ̋",
-                 " ̏",
-                 " ̽",
-                 " ̉",
-                 " ͣ",
-                 " ͤ",
-                 " ͥ",
-                 " ͦ",
-                 " ͧ",
-                 " ͨ",
-                 " ͩ",
-                 " ͪ",
-                 " ͫ",
-                 " ͬ",
-                 " ͭ",
-                 " ͮ",
-                 " ͯ",
-                 " ̾",
-                 " ͛",
-                 " ͆",
-                 " ̚",
-             ],
-             [
-                 " ̕",
-                 " ̛",
-                 " ̀",
-                 " ́",
-                 " ͘",
-                 " ̡",
-                 " ̢",
-                 " ̧",
-                 " ̨",
-                 " ̴",
-                 " ̵",
-                 " ̶",
-                 " ͜",
-                 " ͝",
-                 " ͞",
-                 " ͟",
-                 " ͠",
-                 " ͢",
-                 " ̸",
-                 " ̷",
-                 " ͡",
-             ]]
+    [
+    " ̍",
+    " ̎",
+    " ̄",
+    " ̅",
+    " ̿",
+    " ̑",
+    " ̆",
+    " ̐",
+    " ͒",
+    " ͗",
+    " ͑",
+    " ̇",
+    " ̈",
+    " ̊",
+    " ͂",
+    " ̓",
+    " ̈́",
+    " ͊",
+    " ͋",
+    " ͌",
+    " ̃",
+    " ̂",
+    " ̌",
+    " ͐",
+    " ́",
+    " ̋",
+    " ̏",
+    " ̽",
+    " ̉",
+    " ͣ",
+    " ͤ",
+    " ͥ",
+    " ͦ",
+    " ͧ",
+    " ͨ",
+    " ͩ",
+    " ͪ",
+    " ͫ",
+    " ͬ",
+    " ͭ",
+    " ͮ",
+    " ͯ",
+    " ̾",
+    " ͛",
+    " ͆",
+    " ̚",
+],
+    [
+    " ̕",
+    " ̛",
+    " ̀",
+    " ́",
+    " ͘",
+    " ̡",
+    " ̢",
+    " ̧",
+    " ̨",
+    " ̴",
+    " ̵",
+    " ̶",
+    " ͜",
+    " ͝",
+    " ͞",
+    " ͟",
+    " ͠",
+    " ͢",
+    " ̸",
+    " ̷",
+    " ͡",
+]]
 
 EMOJIS = [
     "😂",
@@ -459,9 +459,9 @@ HELLOSTR = [
 
 PROSTR = [
     "`You is pro user.`",
-     "`Pros here -_- Time to Leave`",
-     "`Pros everywhere`",
-     "`Pro Pro Pro ; What a tragedy`",
+    "`Pros here -_- Time to Leave`",
+    "`Pros everywhere`",
+    "`Pro Pro Pro ; What a tragedy`",
 ]
 
 NUBSTR = [
@@ -715,8 +715,8 @@ SLAP_TEMPLATES_Jutsu = [
 ]
 
 ITEMS_Jutsu = [
-     "KAA MEE HAA MEE HAA",
-     "Chibaku Tensei",
+    "KAA MEE HAA MEE HAA",
+    "Chibaku Tensei",
 ]
 
 THROW_Jutsu = [
@@ -733,10 +733,9 @@ HIT_Jutsu = [
 WHERE_Jutsu = ["Di Pipi", "Di Kepala", "Di Bokong", "Di Badan ,Di Pantat"]
 
 
-       
-#"Gomu Gomu no Kong Gun" Kagak tau,
-#"Karyuu no Hokou" Kagak tau,
-      
+# "Gomu Gomu no Kong Gun" Kagak tau,
+# "Karyuu no Hokou" Kagak tau,
+
 
 # ===========================================
 
@@ -825,29 +824,29 @@ async def slap(replied_user, event):
         slapped = f"[{first_name}](tg://user?id={user_id})"
     slap_str = event.pattern_match.group(1)
     if slap_str == "en":
-       temp = choice(SLAP_TEMPLATES_EN)
-       item = choice(ITEMS_EN)
-       hit = choice(HIT_EN)
-       throw = choice(THROW_EN)
-       where = choice(WHERE_EN)
+        temp = choice(SLAP_TEMPLATES_EN)
+        item = choice(ITEMS_EN)
+        hit = choice(HIT_EN)
+        throw = choice(THROW_EN)
+        where = choice(WHERE_EN)
     elif slap_str == "id":
-       temp = choice(SLAP_TEMPLATES_ID)
-       item = choice(ITEMS_ID)
-       hit = choice(HIT_ID)
-       throw = choice(THROW_ID)
-       where = choice(WHERE_ID)
+        temp = choice(SLAP_TEMPLATES_ID)
+        item = choice(ITEMS_ID)
+        hit = choice(HIT_ID)
+        throw = choice(THROW_ID)
+        where = choice(WHERE_ID)
     elif slap_str == "jutsu":
-       temp = choice(SLAP_TEMPLATES_Jutsu)
-       item = choice(ITEMS_Jutsu)
-       hit = choice(HIT_Jutsu)
-       throw = choice(THROW_Jutsu)
-       where = choice(WHERE_Jutsu)
+        temp = choice(SLAP_TEMPLATES_Jutsu)
+        item = choice(ITEMS_Jutsu)
+        hit = choice(HIT_Jutsu)
+        throw = choice(THROW_Jutsu)
+        where = choice(WHERE_Jutsu)
     else:
-       temp = choice(SLAP_TEMPLATES_EN)
-       item = choice(ITEMS_EN)
-       hit = choice(HIT_EN)
-       throw = choice(THROW_EN)
-       where = choice(WHERE_EN)
+        temp = choice(SLAP_TEMPLATES_EN)
+        item = choice(ITEMS_EN)
+        hit = choice(HIT_EN)
+        throw = choice(THROW_EN)
+        where = choice(WHERE_EN)
 
     caption = "..." + temp.format(
         victim=slapped, item=item, hits=hit, throws=throw, where=where)
@@ -1101,7 +1100,7 @@ async def Oof(e):
         t = t[:-1] + "of"
         await e.edit(t)
 
-                      
+
 @register(outgoing=True, pattern="^.oem$")
 async def Oem(e):
     t = "Oem"
@@ -1110,15 +1109,12 @@ async def Oem(e):
         await e.edit(t)
 
 
-
-
 @register(outgoing=True, pattern="^.Oem$")
 async def Oem(e):
     t = "Oem"
     for j in range(16):
         t = t[:-1] + "em"
         await e.edit(t)
-
 
 
 @register(outgoing=True, pattern="^.10iq$")
@@ -1290,7 +1286,7 @@ async def typewriter(typew):
 
 @register(outgoing=True, pattern="^.fail$")
 async def fail(e):
-   if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
+    if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
         await e.edit("`\n▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄ `"
                      "`\n████▌▄▌▄▐▐▌█████ `"
                      "`\n████▌▄▌▄▐▐▌▀████ `"
@@ -1304,7 +1300,6 @@ async def lol(e):
                      "`\n╱┃┃╱╱╱┃╭━╮┃┃┃╱╱╱╱ `"
                      "`\n╱┃┗━━┓┃╰━╯┃┃┗━━┓╱ `"
                      "`\n╱┗━━━┛╰━━━╯┗━━━┛╱ `")
-
 
 
 @register(outgoing=True, pattern="^.lool$")
@@ -1350,26 +1345,26 @@ async def nih(e):
                      "`\n(●_●)`"
                      "`\n />🌹 *ini buat kamu`"
                      "`\n                    `"
-                     "`\n(\_/)`"
+                     r"`\n(\_/)`"
                      "`\n(●_●)`"
                      "`\n🌹<\  *tapi boong`")
 
 
 @register(outgoing=True, pattern="^.fag$")
 async def gtfo(e):
-   if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
+    if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
         await e.edit("`\n█████████`"
                      "`\n█▄█████▄█`"
                      "`\n█▼▼▼▼▼`"
                      "`\n█       STFU FAGGOT'S`"
                      "`\n█▲▲▲▲▲`"
                      "`\n█████████`"
-                    "`\n ██   ██`")
+                     "`\n ██   ██`")
 
 
 @register(outgoing=True, pattern="^.taco$")
 async def taco(e):
-   if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
+    if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
         await e.edit("\n{\__/}"
                      "\n(●_●)"
                      "\n( >🌮 Want a taco?")
@@ -1391,13 +1386,13 @@ async def sayhi(e):
 
 @register(outgoing=True, pattern="^.paw$")
 async def paw(e):
-   if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
+    if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
         await e.edit("`(=ↀωↀ=)")
 
 
 @register(outgoing=True, pattern="^.tf$")
 async def tf(e):
-   if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
+    if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
         await e.edit("(̿▀̿ ̿Ĺ̯̿̿▀̿ ̿)̄  ")
 
 
@@ -1407,7 +1402,7 @@ async def gey(e):
         await e.edit("`\n┈┈┈╭━━━━━╮┈┈┈┈┈\n┈┈┈┃┊┊┊┊┊┃┈┈┈┈┈`"
                      "`\n┈┈┈┃┊┊╭━╮┻╮┈┈┈┈\n┈┈┈╱╲┊┃▋┃▋┃┈┈┈┈\n┈┈╭┻┊┊╰━┻━╮┈┈┈┈`"
                      "`\n┈┈╰┳┊╭━━━┳╯┈┈┈┈\n┈┈┈┃┊┃╰━━┫┈NIGGA U GEY`"
-                    "\n┈┈┈┈┈┈┏━┓┈┈┈┈┈┈")
+                     "\n┈┈┈┈┈┈┏━┓┈┈┈┈┈┈")
 
 
 @register(outgoing=True, pattern="^.gay$")
@@ -1416,7 +1411,7 @@ async def gey(e):
         await e.edit("`\n┈┈┈╭━━━━━╮┈┈┈┈┈\n┈┈┈┃┊┊┊┊┊┃┈┈┈┈┈`"
                      "`\n┈┈┈┃┊┊╭━╮┻╮┈┈┈┈\n┈┈┈╱╲┊┃▋┃▋┃┈┈┈┈\n┈┈╭┻┊┊╰━┻━╮┈┈┈┈`"
                      "`\n┈┈╰┳┊╭━━━┳╯┈┈┈┈\n┈┈┈┃┊┃╰━━┫┈BAPAQ U GAY`"
-                    "\n┈┈┈┈┈┈┏━┓┈┈┈┈┈┈")
+                     "\n┈┈┈┈┈┈┏━┓┈┈┈┈┈┈")
 
 
 @register(outgoing=True, pattern="^.bot$")
@@ -1440,11 +1435,12 @@ async def nou(e):
         await e.edit("`\n┈╭╮╭╮\n┈┃┃┃┃\n╭┻┗┻┗╮`"
                      "`\n┃┈▋┈▋┃\n┃┈╭▋━╮━╮\n┃┈┈╭╰╯╰╯╮`"
                      "`\n┫┈┈  NoU\n┃┈╰╰━━━━╯`"
-"`\n┗━━┻━┛`")
+                     "`\n┗━━┻━┛`")
+
 
 @register(outgoing=True, pattern="^.tolol$")
 async def tolol(e):
-   if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
+    if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
         await e.edit("`\n░▀█▀░▄▀▄░█▒░░▄▀▄░█▒░`"
                      "`\n░▒█▒░▀▄▀▒█▄▄░▀▄▀▒█▄▄`")
 

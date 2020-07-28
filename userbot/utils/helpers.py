@@ -70,7 +70,6 @@ async def isRestart(client: UserBotClient) -> None:
         except (ValueError, errors.MessageAuthorRequiredError,
                 errors.MessageNotModifiedError, errors.MessageIdInvalidError):
             LOGGER.debug(f"Failed to edit message ({message}) in {entity}.")
-            pass
 
     if updated:
         text = "`Successfully updated and restarted the userbot!`"
@@ -275,6 +274,7 @@ def dl_progress(d: dict, event) -> Tuple[Union[str, bool], bool]:
 
 class ProgressCallback():
     """Custom class to handle upload and download progress."""
+
     def __init__(self, event, start=None, filen='unamed'):
         self.event = event
         self.start = start or time.time()

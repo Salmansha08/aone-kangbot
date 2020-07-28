@@ -5,13 +5,7 @@
 #
 """ Userbot module for getting information about the server. """
 
-from asyncio import create_subprocess_exec as asyncrunapp
-from asyncio.subprocess import PIPE as asyncPIPE
-from os import remove
-from platform import python_version, uname
-from shutil import which
 
-from telethon import version
 
 from userbot import CMD_HELP, is_mongo_alive, is_redis_alive, ALIVE_NAME
 from userbot.events import register
@@ -22,7 +16,6 @@ if ALIVE_NAME is not None:
 else:
     DEFAULTUSER = "User"
 # ============================================
-
 
 
 @register(outgoing=True, pattern="^.dbs$")
@@ -36,13 +29,12 @@ async def amireallydbs(dbs):
     else:
         db = "Databases functioning normally!"
     await dbs.edit("`"
-                     f"User: {DEFAULTUSER} \n"
-                     f"Database status: {db}\n"
-                     f"OpenUserBot Version: v7.7.7"
-                     "`")
-                     
-                     
-                     
+                   f"User: {DEFAULTUSER} \n"
+                   f"Database status: {db}\n"
+                   f"OpenUserBot Version: v7.7.7"
+                   "`")
+
+
 CMD_HELP.update(
     {"db": ".dbs\n"
      "Usage: Shows database related info."})

@@ -1,25 +1,10 @@
-#imported from ppe-remix by @heyworld & @DeletedUser420
-from asyncio import sleep
-from random import choice, getrandbits, randint
+# imported from ppe-remix by @heyworld & @DeletedUser420
 import re
-from re import sub
 import random
-from os import execl
-import time
-from telethon import events
 from userbot import bot
-from collections import deque
-import requests
-import sys
-import os
-import io
-import html
-import json
-from PIL import ImageEnhance, ImageOps
 
 from userbot import CMD_HELP
 from userbot.events import register
-from userbot.modules.admin import get_user_from_event
 
 
 EMOJI_PATTERN = re.compile(
@@ -34,7 +19,7 @@ EMOJI_PATTERN = re.compile(
     "\U0001F900-\U0001F9FF"  # Supplemental Symbols and Pictographs
     "\U0001FA00-\U0001FA6F"  # Chess Symbols
     "\U0001FA70-\U0001FAFF"  # Symbols and Pictographs Extended-A
-    "\U00002702-\U000027B0"  # Dingbats 
+    "\U00002702-\U000027B0"  # Dingbats
     "]+")
 
 
@@ -44,10 +29,9 @@ def deEmojify(inputString: str) -> str:
 
 
 @register(outgoing=True, pattern="^.waifu(?: |$)(.*)")
-
 async def waifu(animu):
-#"""Generate random waifu sticker with the text!"""
-     
+    #"""Generate random waifu sticker with the text!"""
+
     text = animu.pattern_match.group(1)
     if not text:
         if animu.is_reply:
@@ -63,9 +47,8 @@ async def waifu(animu):
                             silent=True if animu.is_reply else False,
                             hide_via=True)
     await animu.delete()
-    
-    
+
     CMD_HELP.update({
-    'waifu':
-    ".waitfu : enjoy your text with anime."
-})
+        'waifu':
+        ".waitfu : enjoy your text with anime."
+    })

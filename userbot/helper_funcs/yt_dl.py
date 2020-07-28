@@ -34,6 +34,7 @@ merger = re.compile(r'\[ffmpeg\] Merging formats into "(.+)"')
 
 class YTdlLogger(object):
     """Logger used for YoutubeDL which logs to UserBot logger."""
+
     def debug(self, msg: str) -> None:
         """Logs debug messages with youtube-dl tag to UserBot logger."""
         LOGGER.debug("youtube-dl: " + msg)
@@ -63,6 +64,7 @@ class YTdlLogger(object):
 
 class ProgressHook():
     """Custom hook with the event stored for YTDL."""
+
     def __init__(self, event):
         self.event = event
         self.last_edit = None
@@ -153,7 +155,7 @@ async def list_formats(info_dict: dict) -> str:
         f['format_id'], f['ext'],
         youtube_dl.YoutubeDL.format_resolution(f)
     ] for f in formats
-             if f.get('preference') is None or f['preference'] >= -1000]
+        if f.get('preference') is None or f['preference'] >= -1000]
     if len(formats) > 1:
         table[-1][-1] += (' ' if table[-1][-1] else '') + '(best)'
 

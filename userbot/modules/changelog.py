@@ -13,7 +13,7 @@ import sys
 from git import Repo
 from git.exc import GitCommandError, InvalidGitRepositoryError, NoSuchPathError
 
-from userbot import CMD_HELP, bot, HEROKU_MEMEZ, HEROKU_API_KEY, HEROKU_APP_NAME
+from userbot import CMD_HELP, bot
 from userbot.events import register
 
 
@@ -57,8 +57,8 @@ async def chtream(ch):
         )
         origin = repo.create_remote('chtream', off_repo)
         origin.fetch()
-        repo.create_head('sql-extended', origin.refs.sql-extended)
-        repo.heads.sql-extended.checkout(True)
+        repo.create_head('sql-extended', origin.refs.sql - extended)
+        repo.heads.sql - extended.checkout(True)
 
     ac_br = repo.active_branch.name
     if not await is_off_br(ac_br):
@@ -103,7 +103,7 @@ async def chtream(ch):
     await ch.edit('`New update found, updating...`')
     ch_rem.fetch(ac_br)
     await ch.edit('`Successfully Updated!\n'
-                   'Bot is restarting... Wait for a second!`')
+                  'Bot is restarting... Wait for a second!`')
     await install_requirements()
     await bot.disconnect()
     # Spin a new instance of bot

@@ -6,22 +6,18 @@
 # Thanks to @heyworld for a small correction
 
 import asyncio
-from telethon.tl.functions.photos import GetUserPhotosRequest
-from telethon.tl.functions.users import GetFullUserRequest
-from telethon.tl.types import MessageEntityMentionName
-from telethon.utils import get_input_location
-from telethon import events
-from telethon.tl import functions, types
-from userbot import NC_LOG_P_M_S, PM_LOGGR_BOT_API_ID, bot, CMD_HELP, TEMP_DOWNLOAD_DIRECTORY
+from userbot import CMD_HELP, NC_LOG_P_M_S, PM_LOGGR_BOT_API_ID
 from userbot.events import register
 
 
 NO_PM_LOG_USERS = []
 
-#@borg.on(admin_cmd(incoming=True, func=lambda e: e.is_private))
+# @borg.on(admin_cmd(incoming=True, func=lambda e: e.is_private))
+
+
 @register(incoming=True, disable_edited=True)
 async def monito_p_m_s(event):
-    sender = await event.get_sender()
+    await event.get_sender()
     if event.is_private and not (await event.get_sender()).bot:
         chat = await event.get_chat()
         if chat.id not in NO_PM_LOG_USERS and chat.id:
@@ -35,12 +31,14 @@ async def monito_p_m_s(event):
             except Exception as e:
                 LOGS.warn(str(e))
 
-#@borg.on(admin_cmd(pattern="nolog ?(.*)"))
+# @borg.on(admin_cmd(pattern="nolog ?(.*)"))
+
+
 @register(pattern="^.nolog(?: |$)(.*)")
 async def approve_p_m(event):
     if event.fwd_from:
         return
-    reason = event.pattern_match.group(1)
+    event.pattern_match.group(1)
     chat = await event.get_chat()
     if NC_LOG_P_M_S:
         if event.is_private:
@@ -50,12 +48,12 @@ async def approve_p_m(event):
                 await asyncio.sleep(3)
                 await event.delete()
 
-                
+
 @register(pattern="^.log(?: |$)(.*)")
 async def approve_pm(event):
     if event.fwd_from:
         return
-    reason = event.pattern_match.group(1)
+    event.pattern_match.group(1)
     chat = await event.get_chat()
     if NC_LOG_P_M_S:
         if event.is_private:
@@ -65,10 +63,8 @@ async def approve_pm(event):
                 await asyncio.sleep(3)
                 await event.delete()
 
-CMD_HELP.update({
-    "logpms":
-    "If you don't want chat logs than use `.nolog` , for opposite use `.log`. Default is .log enabled\
+CMD_HELP.update(
+    {"logpms": "If you don't want chat logs than use `.nolog` , for opposite use `.log`. Default is .log enabled\
 \nUsage: This will now log chat msgs to your PM_LOGGR_BOT_API_ID.\
 \nnotice: now you can totally disable pm logs by adding heroku vars PM_LOGGR_BOT_API_ID by providing a valid group ID and NC_LOG_P_M_S True or False,\
-\nwhere False means no pm logs at all..enjoy.. update and do add above mentioned vars."
-})    
+\nwhere False means no pm logs at all..enjoy.. update and do add above mentioned vars."})

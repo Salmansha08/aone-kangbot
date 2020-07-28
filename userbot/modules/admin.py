@@ -9,9 +9,7 @@ Userbot module to help you manage a group
 
 from asyncio import sleep
 from os import remove
-from telethon import events
-from telethon.tl import functions, types
-from platform import python_version, uname
+from telethon.tl import functions
 from telethon.errors import (BadRequestError, ChatAdminRequiredError,
                              ImageProcessFailedError, PhotoCropSizeSmallError,
                              UserAdminInvalidError)
@@ -574,14 +572,12 @@ async def rm_deletedacc(show):
                 EditBannedRequest(show.chat_id, user.id, UNBAN_RIGHTS))
             del_u += 1
 
-
     if del_u > 0:
         del_status = f"Cleaned **{del_u}** deleted account(s)"
 
     if del_a > 0:
         del_status = f"Cleaned **{del_u}** deleted account(s) \
         \n**{del_a}** deleted admin accounts are not removed"
-
 
     await show.edit(del_status)
     await sleep(2)
@@ -592,7 +588,6 @@ async def rm_deletedacc(show):
             BOTLOG_CHATID, "#CLEANUP\n"
             f"Cleaned **{del_u}** deleted account(s) !!\
             \nCHAT: {show.chat.title}(`{show.chat_id}`)")
-
 
 
 @register(outgoing=True, pattern="^.admins$")
@@ -659,6 +654,7 @@ async def pin(msg):
             f"CHAT: {msg.chat.title}(`{msg.chat_id}`)\n"
             f"LOUD: {not is_silent}")
 
+
 @register(outgoing=True, pattern="^.cpin(?: |$)(.*)")
 async def _(event):
     if event.fwd_from:
@@ -683,7 +679,6 @@ async def _(event):
         await event.edit("Reply to a message to pin the message in this Channel.")
 
 
-        
 @register(outgoing=True, pattern="^.kick(?: |$)(.*)")
 async def kick(usr):
     """ For .kick command, kicks the replied/tagged person from the group. """
@@ -815,7 +810,7 @@ async def get_user_from_id(user, event):
 
     return user_obj
 
-  
+
 @register(outgoing=True, pattern="^.usersdel ?(.*)")
 async def get_usersdel(show):
     """ For .usersdel command, list all of the deleted users in a chat. """
@@ -832,7 +827,7 @@ async def get_usersdel(show):
         else:
             searchq = show.pattern_match.group(1)
             async for user in show.client.iter_participants(
-                   show.chat_id, search=f'{searchq}'):
+                    show.chat_id, search=f'{searchq}'):
                 if not user.deleted:
                     mentions += f"\n[{user.first_name}](tg://user?id={user.id}) `{user.id}`"
          #       else:
@@ -905,6 +900,7 @@ async def get_userdel_from_id(user, event):
 
     return user_obj
 
+
 @register(outgoing=True, pattern="^.bots$", groups_only=True)
 async def get_bots(show):
     """ For .bots command, list all of the bots of the chat. """
@@ -914,16 +910,16 @@ async def get_bots(show):
     try:
        # if isinstance(message.to_id, PeerChat):
         #    await show.edit("`I heard that only Supergroups can have bots.`")
-         #   return
+        #   return
        # else:
-            async for user in show.client.iter_participants(
-                    show.chat_id, filter=ChannelParticipantsBots):
-                if not user.deleted:
-                    link = f"<a href=\"tg://user?id={user.id}\">{user.first_name}</a>"
-                    userid = f"<code>{user.id}</code>"
-                    mentions += f"\n{link} {userid}"
-                else:
-                    mentions += f"\nDeleted Bot <code>{user.id}</code>"
+        async for user in show.client.iter_participants(
+                show.chat_id, filter=ChannelParticipantsBots):
+            if not user.deleted:
+                link = f"<a href=\"tg://user?id={user.id}\">{user.first_name}</a>"
+                userid = f"<code>{user.id}</code>"
+                mentions += f"\n{link} {userid}"
+            else:
+                mentions += f"\nDeleted Bot <code>{user.id}</code>"
     except ChatAdminRequiredError as err:
         mentions += " " + str(err) + "\n"
     try:
@@ -942,7 +938,6 @@ async def get_bots(show):
         )
         remove("botlist.txt")
 
-  
 
 CMD_HELP.update({
     "admin":

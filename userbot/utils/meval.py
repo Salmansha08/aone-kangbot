@@ -67,10 +67,10 @@ async def meval(code, globs, **kwargs):
                         ast.Expr(
                             ast.Call(func=ast.Attribute(value=ast.Name(
                                 id=ret_name, ctx=ast.Load()),
-                                                        attr="append",
-                                                        ctx=ast.Load()),
-                                     args=[code[i].value],
-                                     keywords=[])), code[-1])
+                                attr="append",
+                                ctx=ast.Load()),
+                                args=[code[i].value],
+                                keywords=[])), code[-1])
     else:
         for node in code:
             if isinstance(node, ast.Return):

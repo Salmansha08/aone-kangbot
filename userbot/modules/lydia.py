@@ -5,27 +5,16 @@
 # credit goes to @snapdragon and @devpatel_73 for making it work on this userbot.
 #
 
-from coffeehouse.lydia import LydiaAI
-from coffeehouse.api import API
-import asyncio
-from telethon import events
-import logging
-logging.basicConfig(format='[%(levelname) 5s/%(asctime)s] %(name)s: %(message)s',
-                    level=logging.WARNING)
-
-import coffeehouse as cf
-
-import asyncio
-import io
-from userbot.modules.sql_helper.lydia_sql import get_s, get_all_s, add_s, remove_s
-from time import time
-import coffeehouse
-from userbot import LYDIA_API_KEY
-from userbot import BOTLOG, BOTLOG_CHATID, CMD_HELP, bot
 from userbot.events import register
-from telethon import events
+from userbot import CMD_HELP
+from userbot import LYDIA_API_KEY
 from coffeehouse.lydia import LydiaAI
 from coffeehouse.api import API
+import asyncio
+import logging
+logging.basicConfig(
+    format='[%(levelname) 5s/%(asctime)s] %(name)s: %(message)s',
+    level=logging.WARNING)
 
 
 # Non-SQL Mode
@@ -36,6 +25,7 @@ if LYDIA_API_KEY:
     api_client = API(api_key)
     lydia = LydiaAI(api_client)
 
+
 @register(outgoing=True, pattern="^.repcf$")
 async def repcf(event):
     if event.fwd_from:
@@ -43,13 +33,14 @@ async def repcf(event):
     await event.edit("Processing...")
     try:
         session = lydia.create_session()
-        session_id = session.id
+        session.id
         reply = await event.get_reply_message()
         msg = reply.text
         text_rep = session.think_thought(msg)
         await event.edit("**hey friend**: {0}".format(text_rep))
     except Exception as e:
         await event.edit(str(e))
+
 
 @register(outgoing=True, pattern="^.addcf$")
 async def addcf(event):
@@ -61,13 +52,14 @@ async def addcf(event):
     reply_msg = await event.get_reply_message()
     if reply_msg:
         session = lydia.create_session()
-        session_id = session.id
+        session.id
         if reply_msg.from_id is None:
             return await event.edit("Invalid user type.")
         ACC_LYDIA.update({(event.chat_id & reply_msg.from_id): session})
         await event.edit("Lydia successfully (re)enabled for user: {} in chat: {}".format(str(reply_msg.from_id), str(event.chat_id)))
     else:
         await event.edit("Reply to a user to activate Lydia AI on them")
+
 
 @register(outgoing=True, pattern="^.remcf$")
 async def remcf(event):
@@ -86,7 +78,7 @@ async def remcf(event):
 
 @register(incoming=True, disable_edited=True)
 async def user(event):
-    user_text = event.text
+    event.text
     try:
         session = ACC_LYDIA[event.chat_id & event.from_id]
         msg = event.text
@@ -100,7 +92,7 @@ async def user(event):
     except (KeyError, TypeError):
         return
 
-      
+
 CMD_HELP.update({
     "lydia":
     ".addcf <username/reply>\

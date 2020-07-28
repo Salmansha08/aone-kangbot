@@ -29,16 +29,13 @@ Type `.poto` for get **All profile pics of that User**
 from userbot import CMD_HELP
 from userbot.events import register
 
-from telethon.tl.functions.photos import GetUserPhotosRequest
-from telethon.tl.functions.users import GetFullUserRequest
-from telethon.tl.types import MessageEntityMentionName
-from telethon.utils import get_input_location
 import asyncio
 
 
 if 1 == 1:
     name = "Profile Photos"
     client = "userbot"
+
 
 @register(outgoing=True, pattern="^.poto(?: |$)(.*)", disable_errors=True)
 async def potocmd(event):
@@ -74,7 +71,7 @@ async def potocmd(event):
             if id <= 0:
                 await event.edit("`ID number Invalid!` **Are you kidding Me ?**")
                 return
-        except:
+        except BaseException:
             await event.edit(f"`Are you kidding me ?`")
             return
         if int(id) <= (len(photos)):

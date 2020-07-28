@@ -40,7 +40,7 @@ async def randomise(items):
 @register(outgoing=True, pattern="^.sleep( [0-9]+)?$")
 async def sleepybot(time):
     """ For .sleep command, let the userbot snooze for a few second. """
-    message = time.text
+    time.text
     if " " not in time.pattern_match.group(1):
         await time.reply("Syntax: `.sleep [seconds]`")
     else:
@@ -92,14 +92,12 @@ async def bot_community(community):
 async def bot_support(wannahelp):
     """ For .support command, just returns the group link. """
     await wannahelp.edit(
-        "Join this Group to Get Support: [Aone-ID Support](https://t.me/aoneid_support)") 
-
+        "Join this Group to Get Support: [Aone-ID Support](https://t.me/aoneid_support)")
 
 
 @register(outgoing=True, pattern="^.creator$")
 async def creator(e):
     await e.edit("aone-kangbot by [aone-id](https://aone-id.github.io/)\nSupport Group [Aone-ID Support](https://t.me/aoneid_support)\nBased on [OpenUserbot](https://t.me/Three_Cube_TeKnoways)")
-
 
 
 @register(outgoing=True, pattern="^.readme$")
@@ -144,6 +142,7 @@ async def myrepo_is_here(wannaseeme):
     await wannaseeme.edit(
         f'Click [here](https://github.com/{GIT_REPO_NAME}/tree/sql-extended/) to open {DEFAULTUSER}`s GitHub page'
     )
+
 
 @register(outgoing=True, pattern="^.raw$")
 async def raw(event):

@@ -4,7 +4,6 @@
 # Credits @adekmaulana
 
 import os
-import asyncio
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 
 from userbot.events import register
@@ -35,8 +34,8 @@ async def _(fry):
             if level:
                 m = f"/deepfry {level}"
                 msg_level = await conv.send_message(
-                          m,
-                          reply_to=msg.id)
+                    m,
+                    reply_to=msg.id)
                 r = await conv.get_response()
                 response = await conv.get_response()
             else:
@@ -50,8 +49,8 @@ async def _(fry):
             await fry.edit("`Please disable your forward privacy setting...`")
         else:
             downloaded_file_name = await fry.client.download_media(
-                                 response.media,
-                                 TEMP_DOWNLOAD_DIRECTORY
+                response.media,
+                TEMP_DOWNLOAD_DIRECTORY
             )
             await fry.client.send_file(
                 fry.chat_id,
@@ -79,4 +78,3 @@ CMD_HELP.update({
     "\nUsage: deepfry image/sticker from the reply."
     "\n@image_deepfrybot"
 })
-

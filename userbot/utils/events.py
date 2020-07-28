@@ -28,6 +28,7 @@ custom.Message.answer = answer
 @events.common.name_inner_event
 class NewMessage(events.NewMessage):
     """Custom NewMessage event inheriting the default Telethon event"""
+
     def __init__(self,
                  disable_prefix: bool = None,
                  regex: Tuple[str, int] or str = None,
@@ -127,8 +128,8 @@ class MessageEdited(NewMessage):
     def build(cls, update, others=None, self_id=None):
         """Required to check if message is edited, double events"""
         if isinstance(
-                update,
-            (types.UpdateEditMessage, types.UpdateEditChannelMessage)):
+            update,
+                (types.UpdateEditMessage, types.UpdateEditChannelMessage)):
             return cls.Event(update.message)
 
     class Event(NewMessage.Event):

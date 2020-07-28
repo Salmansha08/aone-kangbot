@@ -54,6 +54,7 @@ class Plugin:
 
 class SourcelessPluginLoader(importlib.abc.SourceLoader):
     """Loader for (byte) strings which don't have a source."""
+
     def __init__(self, name, data, path: str = '<string>'):
         self.data = data
         self.path = path
@@ -202,7 +203,7 @@ class PluginManager:
                 if filen == "requirements.txt":
                     resp = requests.get(raw_pattern.format(
                         repo, 'requirements.txt'),
-                                        auth=self.auth)
+                        auth=self.auth)
                     if resp.ok:
                         raw = resp.content.decode('utf-8')
                         req = run_async(get_pip_packages(raw))

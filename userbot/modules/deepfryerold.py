@@ -37,7 +37,6 @@ from PIL import Image, ImageEnhance, ImageOps
 from telethon.tl.types import DocumentAttributeFilename
 
 
-
 @register(pattern="^.deepfry(?: |$)(.*)", outgoing=True)
 async def deepfryer(event):
     try:

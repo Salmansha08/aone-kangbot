@@ -5,14 +5,14 @@
 
 import asyncio
 from os import remove
-from userbot import CMD_HELP, BOTLOG, BOTLOG_CHATID, TERM_ALIAS
+from userbot import CMD_HELP, BOTLOG, BOTLOG_CHATID, USER_TERM_ALIAS
 from userbot.events import register
 
 
 @register(outgoing=True, pattern="^.w3m(?: |$)(.*)")
 async def terminal_runner(w3m):
     """ For .w3m command, browser the internet with w3m on your server. """
-    curruser = TERM_ALIAS
+    curruser = USER_TERM_ALIAS
     command = w3m.pattern_match.group(1)
     try:
         from os import geteuid

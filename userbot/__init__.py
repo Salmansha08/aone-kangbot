@@ -56,7 +56,7 @@ if CONFIG_CHECK:
     quit(1)
 
 # Version
-BOT_VERSION = "2.7"
+BOT_VERSION = "3.0"
 CUSTOM_LOGO = os.environ.get("CUSTOM_LOGO") or None
 
 # Telegram App KEY and HASH

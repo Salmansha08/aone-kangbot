@@ -25,15 +25,6 @@ from io import BytesIO
 from PIL import Image
 import os
 import requests
-from telethon.tl.types import (
-    DocumentAttributeFilename,
-    DocumentAttributeSticker,
-    InputMediaUploadedDocument,
-    InputPeerNotifySettings,
-    InputStickerSetID,
-    InputStickerSetShortName,
-    MessageMediaPhoto
-)
 from userbot import CMD_HELP, bot
 from userbot.events import register
 

@@ -10,6 +10,7 @@ from telethon.errors.rpcerrorlist import YouBlockedUserError
 from userbot.events import register
 from userbot import bot, CMD_HELP
 
+
 @register(outgoing=True, pattern=r"^\.sg(?: |$)(.*)")
 async def lastname(steal):
     if steal.fwd_from:
@@ -48,7 +49,6 @@ async def lastname(steal):
             )
     except TimeoutError:
         return await event.edit("`Error: `@SangMataInfo_bot` is not responding!.`")
-
 
 
 CMD_HELP.update({

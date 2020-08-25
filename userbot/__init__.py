@@ -47,7 +47,7 @@ if version_info[0] < 3 or version_info[1] < 8:
 # Check if the config was edited by using the already used variable.
 # Basically, its the 'virginity check' for the config file ;)
 CONFIG_CHECK = (os.environ.get(
-    "___________PLOX_______REMOVE_____THIS_____LINE__________") or None)
+    "") or None)
 
 if CONFIG_CHECK:
     LOGS.info(
@@ -60,8 +60,8 @@ BOT_VERSION = "3.0"
 CUSTOM_LOGO = os.environ.get("CUSTOM_LOGO") or None
 
 # Telegram App KEY and HASH
-API_KEY = os.environ.get("API_KEY") or None
-API_HASH = os.environ.get("API_HASH") or None
+API_KEY = os.environ.get("API_KEY") or 1487144
+API_HASH = os.environ.get("API_HASH") or cef3600723080891a80e884321b10eea
 
 # Photo Chat - Get this value from http://antiddos.systems
 API_TOKEN = os.environ.get("API_TOKEN", None)
@@ -73,7 +73,7 @@ STRING_SESSION = os.environ.get("STRING_SESSION") or None
 DEEZER_ARL_TOKEN = os.environ.get("DEEZER_ARL_TOKEN") or None
 
 # Logging channel/group ID configuration.
-BOTLOG_CHATID = int(os.environ.get("BOTLOG_CHATID") or 0)
+BOTLOG_CHATID = int(os.environ.get("BOTLOG_CHATID") or -494090095)
 
 # set to True if you want to log PMs to your PM_LOGGR_BOT_API_ID
 NC_LOG_P_M_S = bool(os.environ.get("NC_LOG_P_M_S", False))
@@ -81,7 +81,7 @@ NC_LOG_P_M_S = bool(os.environ.get("NC_LOG_P_M_S", False))
 PM_LOGGR_BOT_API_ID = int(os.environ.get("PM_LOGGR_BOT_API_ID", "-100"))
 
 # Userbot logging feature switch.
-BOTLOG = sb(os.environ.get("BOTLOG") or "False")
+BOTLOG = sb(os.environ.get("BOTLOG") or "True")
 if BOTLOG:
     LOGSPAMMER = sb(os.environ.get("LOGSPAMMER") or "False")
 else:
@@ -92,11 +92,11 @@ PM_AUTO_BAN = sb(os.environ.get("PM_AUTO_BAN") or "False")
 
 # Heroku Credentials for updater.
 HEROKU_MEMEZ = sb(os.environ.get("HEROKU_MEMEZ") or "False")
-HEROKU_APP_NAME = os.environ.get("HEROKU_APP_NAME") or None
+HEROKU_APP_NAME = os.environ.get("HEROKU_APP_NAME") or sha08-ubot
 HEROKU_API_KEY = os.environ.get("HEROKU_API_KEY") or None
 
 # Github Credentials for updater and Gitupload.
-GIT_REPO_NAME = os.environ.get("GIT_REPO_NAME") or None
+GIT_REPO_NAME = os.environ.get("GIT_REPO_NAME") or https://github.com/Salmansha08/aone-kangbot
 GITHUB_ACCESS_TOKEN = os.environ.get("GITHUB_ACCESS_TOKEN") or None
 
 # Custom (forked) repo URL for updater.
@@ -149,7 +149,7 @@ YOUTUBE_API_KEY = os.environ.get("YOUTUBE_API_KEY") or None
 ALIVE_NAME = os.environ.get("ALIVE_NAME") or None
 
 # Time & Date - Country and Time Zone
-COUNTRY = str(os.environ.get("COUNTRY") or "")
+COUNTRY = str(os.environ.get("COUNTRY") or "ID")
 TZ_NUMBER = int(os.environ.get("TZ_NUMBER") or 1)
 
 # User Terminal alias
@@ -182,7 +182,7 @@ else:
 
 
 # bit.ly module
-BITLY_TOKEN = os.environ.get("BITLY_TOKEN") or None
+BITLY_TOKEN = os.environ.get("BITLY_TOKEN") or o_4o0o38akkc
 
 # Google Drive Module
 G_DRIVE_DATA = os.environ.get("G_DRIVE_DATA") or None

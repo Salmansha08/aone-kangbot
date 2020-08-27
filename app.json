@@ -9,17 +9,19 @@
     "modular",
     "productivity"
   ],
-  "repository": "https://github.com/aone-id/aone-kangbot",
+  "repository": "https://github.com/Salmansha08/aone-kangbot",
   "website": "https://telegra.ph/How-to-host-a-Telegram-Userbot-11-02",
   "success_url": "https://t.me/PPE_Support",
   "stack": "container",
   "env": {
     "API_KEY": {
       "description": "Get this value from my.telegram.org.",
+      "value" : "1487144",
       "required": true
     },
     "API_HASH": {
       "description": "Get this value from my.telegram.org.",
+      "value" : "cef3600723080891a80e884321b10eea",
       "required": true
     },
     "API_TOKEN": {
@@ -67,6 +69,7 @@
     },
     "HEROKU_APP_NAME": {
       "description": "Add the Heroku app name here. It helps with userbot updates.",
+      "value" : "sha08-ubot"
       "required": true
     },
     "GITHUB_ACCESS_TOKEN": {
@@ -79,10 +82,12 @@
     },
     "UPSTREAM_REPO_URL": {
       "description": "In case you maintain a fork, add your repo URL here.",
+      "value" : "https://github.com/Salmansha08/aone-kangbot",
       "required": false
     },
     "COUNTRY": {
       "description": "Set your Country to be used in the .time and .date commands.",
+      "value" : "ID"
       "required": false
     },
     "TZ_NUMBER": {
@@ -106,7 +111,7 @@
     },
     "BOTLOG": {
       "description": "Incase you want to turn off logging, put this to false",
-      "value": "False"
+      "value": "True"
     },
     "DEEZER_ARL_TOKEN": {
       "description": "Fill of your Deezer ARL token. Get from https://notabug.org/RemixDevs/DeezloaderRemix/wiki/Login+via+userToken",
@@ -115,7 +120,7 @@
     },
     "BOTLOG_CHATID": {
       "description": "ChatID of the Log group. Set it to '0' if BOTLOG = False and/or if LOGSPAMMER = False.",
-      "value": "0"
+      "value": "-494090095",
     },
     "CONSOLE_LOGGER_VERBOSE": {
       "description": "If you need verbosity on the console logging",
@@ -123,7 +128,7 @@
     },
     "PM_AUTO_BAN": {
       "description": "PM Auto-Ban Feature Switch. Also known as the 'bleep blop, this is a bot...' module.",
-      "value": "False"
+      "value": "True"
     },
     "YOUTUBE_API_KEY": {
       "description": "YouTube Data API Key for .yt command. Get from https://console.cloud.google.com",
@@ -191,7 +196,7 @@
     },
     "DEFAULT_BIO": {
       "description": "Default profile bio.",
-      "value": "[PM = Report Spam] I ❤ ️@Aone-Kangbot",
+      "value": "[Don't PM me] Hanifah ❤️",
       "required": false
     },
     "ALIVE_NAME": {
@@ -221,7 +226,7 @@
     },
     "BITLY_TOKEN": {
       "description": "Your Bit.ly API key, get it from 'https://bitly.com/a/sign_up'",
-      "value": ""
+      "value": "o_4o0o38akkc"
     },
     "CUSTOM_LOGO": {
       "description": "Set custom banner for alive message. Ex: https://github.com/aone-id/aone-kangbot/raw/sql-extended/aoneid.png",
